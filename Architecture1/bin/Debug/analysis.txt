@@ -1,0 +1,294 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  ns/call  ns/call  name    
+ 39.80     47.44    47.44 870151785    54.52    57.14  GenericSet<int>::intersect(GenericSet<int> const&)
+ 13.79     63.87    16.43 200000000    82.16   191.93  _init
+ 10.34     76.20    12.32 570151787    21.61    38.51  GenericSet<int>::combine(GenericSet<int> const&)
+  6.22     83.61     7.41 870151787     8.52    11.42  GenericSet<int>::differentiate(GenericSet<int> const&)
+  5.86     90.59     6.98 770151784     9.07     9.07  frame_dummy
+  4.78     96.29     5.70                             _start
+  1.20     97.72     1.43 100000001    14.32    23.39  main
+  0.79     98.67     0.95                             __do_global_dtors_aux
+  0.39     99.14     0.47 100000000     4.71    16.12  std::_Rb_tree<int, int, std::_Identity<int>, std::less<int>, std::allocator<int> >::~_Rb_tree()
+  0.34     99.54     0.41 100000000     4.06     4.06  std::_Rb_tree<int, int, std::_Identity<int>, std::less<int>, std::allocator<int> >::_M_erase(std::_Rb_tree_node<int>*)
+  0.24     99.83     0.29 100000000     2.90     2.90  std::set<int, std::less<int>, std::allocator<int> >::operator=(std::set<int, std::less<int>, std::allocator<int> >&&)
+  0.20    100.07     0.24 100000000     2.40     4.21  std::set<int, std::less<int>, std::allocator<int> >::set()
+  0.20    100.31     0.24                             deregister_tm_clones
+  0.19    100.53     0.23                             std::_Rb_tree<int, int, std::_Identity<int>, std::less<int>, std::allocator<int> >::_M_begin()
+  0.16    100.72     0.19                             register_tm_clones
+  0.15    100.90     0.18 100000000     1.80     1.80  std::allocator<std::_Rb_tree_node<int> >::~allocator()
+  0.11    101.03     0.13                             GenericSet<int>::add(int const&)
+  0.08    101.12     0.09                             bool& std::forward<bool&>(std::remove_reference<bool&>::type&)
+  0.07    101.20     0.08                             std::set<int, std::less<int>, std::allocator<int> >::clear()
+  0.06    101.27     0.07                             std::_Rb_tree<int, int, std::_Identity<int>, std::less<int>, std::allocator<int> >::_Rb_tree_impl<std::less<int>, true>::~_Rb_tree_impl()
+  0.04    101.32     0.05                             std::_Rb_tree_iterator<int>& std::forward<std::_Rb_tree_iterator<int>&>(std::remove_reference<std::_Rb_tree_iterator<int>&>::type&)
+  0.03    101.36     0.04                             __gmon_start__
+  0.00    101.36     0.00        3     0.00     0.00  GenericSet<int>::GenericSet()
+  0.00    101.36     0.00        3     0.00     0.00  std::set<int, std::less<int>, std::allocator<int> >::~set()
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+ 
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this 
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+Copyright (C) 2012 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+		     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 2 byte(s) for 0.01% of 101.36 seconds
+
+index % time    self  children    called     name
+[1]     90.8   65.78   26.29 400000000+870151786 <cycle 1 as a whole> [1]
+               47.44    2.28 870151785             GenericSet<int>::intersect(GenericSet<int> const&) <cycle 1> [2]
+               16.43   21.95 200000000+200000000     _init <cycle 1> [4]
+                1.43    0.91 100000001+100000000     main <cycle 1> [11]
+                0.47    1.14 100000000             std::_Rb_tree<int, int, std::_Identity<int>, std::less<int>, std::allocator<int> >::~_Rb_tree() <cycle 1> [12]
+-----------------------------------------------
+                             199999998             main <cycle 1> [11]
+                             470151787             _init <cycle 1> [4]
+                0.00    0.00       2/400000000     __gmon_start__ [6]
+               16.44    6.57 99999999/400000000     deregister_tm_clones [5]
+               16.44    6.57 99999999/400000000     register_tm_clones [3]
+[2]     49.1   47.44    2.28 870151785         GenericSet<int>::intersect(GenericSet<int> const&) <cycle 1> [2]
+                1.70    0.58 199999998/870151787     GenericSet<int>::differentiate(GenericSet<int> const&) [8]
+                                   1             main <cycle 1> [11]
+-----------------------------------------------
+                                                 <spontaneous>
+[3]     45.6    0.19   46.03                 register_tm_clones [3]
+               16.44    6.57 99999999/400000000     GenericSet<int>::intersect(GenericSet<int> const&) <cycle 1> [2]
+               16.44    6.57 99999999/400000000     _init <cycle 1> [4]
+-----------------------------------------------
+                             200000000             _init <cycle 1> [4]
+                             100000000             std::_Rb_tree<int, int, std::_Identity<int>, std::less<int>, std::allocator<int> >::~_Rb_tree() <cycle 1> [12]
+                0.00    0.00       1/400000000     deregister_tm_clones [5]
+               16.44    6.57 99999999/400000000     register_tm_clones [3]
+[4]     37.9   16.43   21.95 200000000+200000000 _init <cycle 1> [4]
+               12.32    9.63 570151787/570151787     GenericSet<int>::combine(GenericSet<int> const&) [7]
+                             470151787             GenericSet<int>::intersect(GenericSet<int> const&) <cycle 1> [2]
+                             200000000             _init <cycle 1> [4]
+-----------------------------------------------
+                                                 <spontaneous>
+[5]     22.9    0.24   23.02                 deregister_tm_clones [5]
+               16.44    6.57 99999999/400000000     GenericSet<int>::intersect(GenericSet<int> const&) <cycle 1> [2]
+                0.00    0.00       1/400000000     _init <cycle 1> [4]
+-----------------------------------------------
+                                                 <spontaneous>
+[6]     22.7    0.04   23.02                 __gmon_start__ [6]
+               16.44    6.57 100000000/400000000     main <cycle 1> [11]
+                0.00    0.00       2/400000000     GenericSet<int>::intersect(GenericSet<int> const&) <cycle 1> [2]
+-----------------------------------------------
+               12.32    9.63 570151787/570151787     _init <cycle 1> [4]
+[7]     21.7   12.32    9.63 570151787         GenericSet<int>::combine(GenericSet<int> const&) [7]
+                4.00    1.36 470151787/870151787     GenericSet<int>::differentiate(GenericSet<int> const&) [8]
+                4.26    0.00 470151787/770151784     frame_dummy [9]
+-----------------------------------------------
+                0.00    0.00       2/870151787     __static_initialization_and_destruction_0(int, int) [24]
+                0.85    0.29 100000000/870151787     std::_Rb_tree<int, int, std::_Identity<int>, std::less<int>, std::allocator<int> >::~_Rb_tree() <cycle 1> [12]
+                0.85    0.29 100000000/870151787     GenericSet<int>::add(int const&) [13]
+                1.70    0.58 199999998/870151787     GenericSet<int>::intersect(GenericSet<int> const&) <cycle 1> [2]
+                4.00    1.36 470151787/870151787     GenericSet<int>::combine(GenericSet<int> const&) [7]
+[8]      9.8    7.41    2.52 870151787         GenericSet<int>::differentiate(GenericSet<int> const&) [8]
+                1.81    0.00 199999998/770151784     frame_dummy [9]
+                0.24    0.18 100000000/100000000     std::set<int, std::less<int>, std::allocator<int> >::set() [16]
+                0.29    0.00 100000000/100000000     std::set<int, std::less<int>, std::allocator<int> >::operator=(std::set<int, std::less<int>, std::allocator<int> >&&) [18]
+-----------------------------------------------
+                0.91    0.00 99999999/770151784     main <cycle 1> [11]
+                1.81    0.00 199999998/770151784     GenericSet<int>::differentiate(GenericSet<int> const&) [8]
+                4.26    0.00 470151787/770151784     GenericSet<int>::combine(GenericSet<int> const&) [7]
+[9]      6.9    6.98    0.00 770151784         frame_dummy [9]
+-----------------------------------------------
+                                                 <spontaneous>
+[10]     5.6    5.70    0.00                 _start [10]
+-----------------------------------------------
+                             100000000             main <cycle 1> [11]
+                                   1             GenericSet<int>::intersect(GenericSet<int> const&) <cycle 1> [2]
+               16.44    6.57 100000000/400000000     __gmon_start__ [6]
+[11]     2.3    1.43    0.91 100000001+100000000 main <cycle 1> [11]
+                0.91    0.00 99999999/770151784     frame_dummy [9]
+                             199999998             GenericSet<int>::intersect(GenericSet<int> const&) <cycle 1> [2]
+                             100000000             std::_Rb_tree<int, int, std::_Identity<int>, std::less<int>, std::allocator<int> >::~_Rb_tree() <cycle 1> [12]
+                             100000000             main <cycle 1> [11]
+-----------------------------------------------
+                             100000000             main <cycle 1> [11]
+[12]     1.6    0.47    1.14 100000000         std::_Rb_tree<int, int, std::_Identity<int>, std::less<int>, std::allocator<int> >::~_Rb_tree() <cycle 1> [12]
+                0.85    0.29 100000000/870151787     GenericSet<int>::differentiate(GenericSet<int> const&) [8]
+                             100000000             _init <cycle 1> [4]
+-----------------------------------------------
+                                                 <spontaneous>
+[13]     1.3    0.13    1.14                 GenericSet<int>::add(int const&) [13]
+                0.85    0.29 100000000/870151787     GenericSet<int>::differentiate(GenericSet<int> const&) [8]
+-----------------------------------------------
+                                                 <spontaneous>
+[14]     0.9    0.95    0.00                 __do_global_dtors_aux [14]
+-----------------------------------------------
+                                                 <spontaneous>
+[15]     0.5    0.08    0.41                 std::set<int, std::less<int>, std::allocator<int> >::clear() [15]
+                0.41    0.00 100000000/100000000     std::_Rb_tree<int, int, std::_Identity<int>, std::less<int>, std::allocator<int> >::_M_erase(std::_Rb_tree_node<int>*) [17]
+-----------------------------------------------
+                0.24    0.18 100000000/100000000     GenericSet<int>::differentiate(GenericSet<int> const&) [8]
+[16]     0.4    0.24    0.18 100000000         std::set<int, std::less<int>, std::allocator<int> >::set() [16]
+                0.18    0.00 100000000/100000000     std::allocator<std::_Rb_tree_node<int> >::~allocator() [20]
+-----------------------------------------------
+                             100000000             std::_Rb_tree<int, int, std::_Identity<int>, std::less<int>, std::allocator<int> >::_M_erase(std::_Rb_tree_node<int>*) [17]
+                0.41    0.00 100000000/100000000     std::set<int, std::less<int>, std::allocator<int> >::clear() [15]
+[17]     0.4    0.41    0.00 100000000+100000000 std::_Rb_tree<int, int, std::_Identity<int>, std::less<int>, std::allocator<int> >::_M_erase(std::_Rb_tree_node<int>*) [17]
+                             100000000             std::_Rb_tree<int, int, std::_Identity<int>, std::less<int>, std::allocator<int> >::_M_erase(std::_Rb_tree_node<int>*) [17]
+-----------------------------------------------
+                0.29    0.00 100000000/100000000     GenericSet<int>::differentiate(GenericSet<int> const&) [8]
+[18]     0.3    0.29    0.00 100000000         std::set<int, std::less<int>, std::allocator<int> >::operator=(std::set<int, std::less<int>, std::allocator<int> >&&) [18]
+-----------------------------------------------
+                                                 <spontaneous>
+[19]     0.2    0.23    0.00                 std::_Rb_tree<int, int, std::_Identity<int>, std::less<int>, std::allocator<int> >::_M_begin() [19]
+-----------------------------------------------
+                0.18    0.00 100000000/100000000     std::set<int, std::less<int>, std::allocator<int> >::set() [16]
+[20]     0.2    0.18    0.00 100000000         std::allocator<std::_Rb_tree_node<int> >::~allocator() [20]
+-----------------------------------------------
+                                                 <spontaneous>
+[21]     0.1    0.09    0.00                 bool& std::forward<bool&>(std::remove_reference<bool&>::type&) [21]
+-----------------------------------------------
+                                                 <spontaneous>
+[22]     0.1    0.07    0.00                 std::_Rb_tree<int, int, std::_Identity<int>, std::less<int>, std::allocator<int> >::_Rb_tree_impl<std::less<int>, true>::~_Rb_tree_impl() [22]
+-----------------------------------------------
+                                                 <spontaneous>
+[23]     0.0    0.05    0.00                 std::_Rb_tree_iterator<int>& std::forward<std::_Rb_tree_iterator<int>&>(std::remove_reference<std::_Rb_tree_iterator<int>&>::type&) [23]
+-----------------------------------------------
+                                                 <spontaneous>
+[24]     0.0    0.00    0.00                 __static_initialization_and_destruction_0(int, int) [24]
+                0.00    0.00       2/870151787     GenericSet<int>::differentiate(GenericSet<int> const&) [8]
+-----------------------------------------------
+                0.00    0.00       3/3           GenericSet<int>::~GenericSet() [32]
+[28]     0.0    0.00    0.00       3         GenericSet<int>::GenericSet() [28]
+                0.00    0.00       3/3           std::set<int, std::less<int>, std::allocator<int> >::~set() [29]
+-----------------------------------------------
+                0.00    0.00       3/3           GenericSet<int>::GenericSet() [28]
+[29]     0.0    0.00    0.00       3         std::set<int, std::less<int>, std::allocator<int> >::~set() [29]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index	A unique number given to each element of the table.
+		Index numbers are sorted numerically.
+		The index number is printed next to every function name so
+		it is easier to look up where the function is in the table.
+
+     % time	This is the percentage of the `total' time that was spent
+		in this function and its children.  Note that due to
+		different viewpoints, functions excluded by options, etc,
+		these numbers will NOT add up to 100%.
+
+     self	This is the total amount of time spent in this function.
+
+     children	This is the total amount of time propagated into this
+		function by its children.
+
+     called	This is the number of times the function was called.
+		If the function called itself recursively, the number
+		only includes non-recursive calls, and is followed by
+		a `+' and the number of recursive calls.
+
+     name	The name of the current function.  The index number is
+		printed after it.  If the function is a member of a
+		cycle, the cycle number is printed between the
+		function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the function into this parent.
+
+     children	This is the amount of time that was propagated from
+		the function's children into this parent.
+
+     called	This is the number of times this parent called the
+		function `/' the total number of times the function
+		was called.  Recursive calls to the function are not
+		included in the number after the `/'.
+
+     name	This is the name of the parent.  The parent's index
+		number is printed after it.  If the parent is a
+		member of a cycle, the cycle number is printed between
+		the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `<spontaneous>' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the child into the function.
+
+     children	This is the amount of time that was propagated from the
+		child's children to the function.
+
+     called	This is the number of times the function called
+		this child `/' the total number of times the child
+		was called.  Recursive calls by the child are not
+		listed in the number after the `/'.
+
+     name	This is the name of the child.  The child's index
+		number is printed after it.  If the child is a
+		member of a cycle, the cycle number is printed
+		between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+Copyright (C) 2012 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+Index by function name
+
+   [8] GenericSet<int>::differentiate(GenericSet<int> const&) [18] std::set<int, std::less<int>, std::allocator<int> >::operator=(std::set<int, std::less<int>, std::allocator<int> >&&) [4] _init
+  [13] GenericSet<int>::add(int const&) [22] std::_Rb_tree<int, int, std::_Identity<int>, std::less<int>, std::allocator<int> >::_Rb_tree_impl<std::less<int>, true>::~_Rb_tree_impl() [10] _start
+   [7] GenericSet<int>::combine(GenericSet<int> const&) [19] std::_Rb_tree<int, int, std::_Identity<int>, std::less<int>, std::allocator<int> >::_M_begin() [5] deregister_tm_clones
+   [2] GenericSet<int>::intersect(GenericSet<int> const&) [17] std::_Rb_tree<int, int, std::_Identity<int>, std::less<int>, std::allocator<int> >::_M_erase(std::_Rb_tree_node<int>*) [9] frame_dummy
+  [28] GenericSet<int>::GenericSet() [12] std::_Rb_tree<int, int, std::_Identity<int>, std::less<int>, std::allocator<int> >::~_Rb_tree() [11] main
+  [20] std::allocator<std::_Rb_tree_node<int> >::~allocator() [23] std::_Rb_tree_iterator<int>& std::forward<std::_Rb_tree_iterator<int>&>(std::remove_reference<std::_Rb_tree_iterator<int>&>::type&) [3] register_tm_clones
+  [15] std::set<int, std::less<int>, std::allocator<int> >::clear() [21] bool& std::forward<bool&>(std::remove_reference<bool&>::type&) [1] <cycle 1>
+  [16] std::set<int, std::less<int>, std::allocator<int> >::set() [14] __do_global_dtors_aux
+  [29] std::set<int, std::less<int>, std::allocator<int> >::~set() [6] __gmon_start__
